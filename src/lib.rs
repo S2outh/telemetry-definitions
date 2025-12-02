@@ -1,10 +1,18 @@
 #![feature(const_trait_impl)]
+pub mod command_types;
+
 use telemetry_system::*;
+
+#[telemetry_definition]
+mod telecommands {
+    #[tmv(crate::command_types::Telecommand, id = 1)]
+    struct Telecommand;
+}
 
 #[telemetry_definition]
 mod telemetry {
 
-    #[tmv(i64, id = 1)]
+    #[tmv(i64, id = 0)]
     struct Timestamp;
     
     mod lst {
