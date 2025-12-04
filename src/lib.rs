@@ -2,7 +2,7 @@
 #![feature(const_trait_impl)]
 pub mod command_types;
 
-use tmtc_system::*;
+pub use tmtc_system::*;
 
 #[telemetry_definition]
 mod telecommands {
