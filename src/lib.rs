@@ -11,61 +11,63 @@ pub use tmtc_system::DynTelemetryDefinition;
 pub use low_rate_telemetry::LowRateTelemetry;
 pub use mid_rate_telemetry::MidRateTelemetry;
 
-#[telemetry_definition]
+#[telemetry_definition(id = 0)]
 mod telecommands {
-    #[tmv(crate::command_types::Telecommand, id = 1)]
+    #[tmv(crate::command_types::Telecommand)]
     struct Telecommand;
 }
 
-#[telemetry_definition]
+#[telemetry_definition(id = 1)]
 pub mod telemetry {
 
-    #[tmv(i64, id = 0)]
+    #[tmv(i64)]
     struct Timestamp;
     
+    #[tmm(id = 100)]
     mod lst {
-        #[tmv(u32, id = 100)]
+        #[tmv(u32)]
         struct Uptime;
 
-        #[tmv(i8, id = 101)]
+        #[tmv(i8)]
         struct Rssi;
 
-        #[tmv(u8, id = 102)]
+        #[tmv(u8)]
         struct Lqi;
 
-        #[tmv(u32, id = 103)]
+        #[tmv(u32)]
         struct PacketsSend;
         
-        #[tmv(u32, id = 104)]
+        #[tmv(u32)]
         struct PacketsGood;
 
-        #[tmv(u32, id = 105)]
+        #[tmv(u32)]
         struct PacketsBadChecksum;
 
-        #[tmv(u32, id = 106)]
+        #[tmv(u32)]
         struct PacketsBadOther;
     }
 
+    #[tmm(id = 200)]
     mod eps {
-        #[tmv(u8, id = 200)]
+        #[tmv(u8)]
         struct EnableBitmap;
         
-        #[tmv(i16, id = 201)]
+        #[tmv(i16)]
         struct AuxPowerVoltage;
 
-        #[tmv(i16, id = 202)]
+        #[tmv(i16)]
         struct InternalTemperature;
 
-        #[tmv(i16, id = 203)]
+        #[tmv(i16)]
         struct Bat1Voltage;
 
-        #[tmv(i16, id = 204)]
+        #[tmv(i16)]
         struct Bat1Temperature;
         
-        #[tmv(i16, id = 205)]
+        #[tmv(i16)]
         struct Bat2Voltage;
 
-        #[tmv(i16, id = 206)]
+        #[tmv(i16)]
         struct Bat2Temperature;
     }
 }
