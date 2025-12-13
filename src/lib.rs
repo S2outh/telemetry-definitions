@@ -3,10 +3,10 @@
 
 mod definitions;
 mod beacons;
-
 pub mod command_types;
 
 // public reexports
+pub use definitions::*;
 pub use tmtc_system::TMValue;
 pub use tmtc_system::DynTMValue;
 pub use tmtc_system::DynBeacon;
