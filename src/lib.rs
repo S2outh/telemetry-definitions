@@ -5,7 +5,6 @@ mod definitions;
 mod beacons;
 
 pub mod command_types;
-pub mod can_config;
 
 // public reexports
 pub use tmtc_system::TMValue;
