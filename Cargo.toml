@@ -3,5 +3,19 @@ name = "south-common"
 version = "0.2.0"
 edition = "2024"
 
+[features]
+default = [ "g0" ]
+
+g0 = [ "embedded", "embassy-stm32/stm32g0b1ke" ]
+h7 = [ "embedded", "embassy-stm32/stm32h723vg" ]
+
+embedded = [ "embassy-stm32", "defmt", "heapless", "embedded-can" ]
+
 [dependencies]
 tmtc-system = { version = "0.1.0", git = "ssh://git@github.com/S2outh/telemetry-system.git" }
+
+# air
+embassy-stm32 = { version = "0.4.0", features = [ "defmt" ], optional = true }
+defmt = { version = "1.0", optional = true }
+heapless = { version = "0.9", default-features = false, optional = true }
+embedded-can = { version = "0.4.1", optional = true }
