@@ -11,13 +11,6 @@ pub mod can_config;
 
 // public reexports
 pub use definitions::{telemetry, telecommands};
-pub use tmtc_system::{
-    TMValue,
-    DynTMValue,
-    DynBeacon,
-    DynTelemetryDefinition,
-    TelemetryContainer,
-    telemetry_container,
-};
+pub use tmtc_system::*;
 pub use beacons::low_rate_telemetry::LowRateTelemetry;
 pub use beacons::mid_rate_telemetry::MidRateTelemetry;
