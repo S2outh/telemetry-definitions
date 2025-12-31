@@ -2,6 +2,9 @@
 #![feature(const_trait_impl)]
 #![feature(const_cmp)]
 
+#[cfg(feature = "alloc")]
+extern crate alloc;
+
 mod definitions;
 mod beacons;
 

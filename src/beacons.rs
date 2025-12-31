@@ -14,6 +14,7 @@ beacon!(LowRateTelemetry, crate::definitions::telemetry,
     )
 );
 
+
 beacon!(MidRateTelemetry, crate::definitions::telemetry,
     id = 1,
     telemetry(
