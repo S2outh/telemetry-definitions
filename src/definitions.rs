@@ -2,7 +2,7 @@ use tmtc_system::*;
 
 #[telemetry_definition(id = 0)]
 mod telecommands {
-    #[tmv(crate::command_types::Telecommand)]
+    #[tmv(crate::types::Telecommand)]
     struct Telecommand;
 }
 
@@ -58,6 +58,33 @@ pub mod telemetry {
 
         #[tmv(i16)]
         struct Bat2Temperature;
+    }
+
+    #[tmm(id = 300)]
+    mod upper_sensor {
+        #[tmv(crate::types::Vec3I16)]
+        struct Imu1AccelLowRange;
+        
+        #[tmv(crate::types::Vec3I16)]
+        struct Imu1AccelFullRange;
+
+        #[tmv(crate::types::Vec3I16)]
+        struct Imu1Gyro;
+
+        #[tmv(i16)]
+        struct Imu1Temp;
+        
+        #[tmv(crate::types::Vec3I16)]
+        struct Imu2AccelLowRange;
+        
+        #[tmv(crate::types::Vec3I16)]
+        struct Imu2AccelFullRange;
+
+        #[tmv(crate::types::Vec3I16)]
+        struct Imu2Gyro;
+
+        #[tmv(i16)]
+        struct Imu2Temp;
     }
 }
 

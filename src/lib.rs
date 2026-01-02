@@ -8,7 +8,7 @@ extern crate alloc;
 mod definitions;
 mod beacons;
 
-pub mod command_types;
+pub mod types;
 #[cfg(feature = "embedded")]
 pub mod can_config;
 
