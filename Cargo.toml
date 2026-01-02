@@ -4,7 +4,7 @@ version = "0.2.0"
 edition = "2024"
 
 [features]
-default = [ "g0" ]
+default = [ ]
 
 g0 = [ "embedded", "embassy-stm32/stm32g0b1ke" ]
 h7 = [ "embedded", "embassy-stm32/stm32h723vg" ]
