@@ -22,7 +22,7 @@ pub struct Telecommand {
 //    DisableSink(Sink, Option<u8>),
 //}
 
-#[derive(TMValue, Default)]
+#[derive(TMValue, Default, Copy, Clone)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize))]
 pub struct Vec3I16 {
     x: i16,
