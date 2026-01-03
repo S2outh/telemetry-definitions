@@ -23,7 +23,7 @@ pub struct Telecommand {
 //}
 
 #[derive(TMValue, Default, Copy, Clone)]
-#[cfg_attr(feature = "serde", derive(serde::Serialize))]
+#[cfg_attr(feature = "serde", derive(serde::Serialize, Debug))]
 pub struct Vec3I16 {
     x: i16,
     y: i16,
