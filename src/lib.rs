@@ -17,3 +17,4 @@ pub use definitions::{telemetry, telecommands};
 pub use tmtc_system::*;
 pub use beacons::low_rate_telemetry::LowRateTelemetry;
 pub use beacons::mid_rate_telemetry::MidRateTelemetry;
+pub use beacons::high_rate_telemetry::HighRateTelemetry;
