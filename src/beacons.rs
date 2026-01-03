@@ -1,42 +1,48 @@
 use tmtc_system::*;
 
-beacon!(LowRateTelemetry, crate::definitions::telemetry,
+beacon!(LowRateTelemetry,
+    crate::definitions::telemetry::lst,
+    crate::definitions::telemetry::Timestamp,
     id = 0,
     telemetry(
-        lst::Uptime,
-        lst::Rssi,
-        lst::Lqi,
-        lst::PacketsSend,
-        lst::PacketsGood,
-        lst::PacketsBadChecksum,
-        lst::PacketsBadOther
+        Uptime,
+        Rssi,
+        Lqi,
+        PacketsSend,
+        PacketsGood,
+        PacketsBadChecksum,
+        PacketsBadOther
     )
 );
 
 
-beacon!(MidRateTelemetry, crate::definitions::telemetry,
+beacon!(MidRateTelemetry,
+    crate::definitions::telemetry::eps,
+    crate::definitions::telemetry::Timestamp,
     id = 1,
     telemetry(
-        eps::EnableBitmap,
-        eps::AuxPowerVoltage,
-        eps::InternalTemperature,
-        eps::Bat1Voltage,
-        eps::Bat1Temperature,
-        eps::Bat2Voltage,
-        eps::Bat2Temperature
+        EnableBitmap,
+        AuxPowerVoltage,
+        InternalTemperature,
+        Bat1Voltage,
+        Bat1Temperature,
+        Bat2Voltage,
+        Bat2Temperature
     )
 );
 
-beacon!(HighRateTelemetry, crate::definitions::telemetry,
+beacon!(HighRateTelemetry,
+    crate::definitions::telemetry::upper_sensor,
+    crate::definitions::telemetry::Timestamp,
     id = 2,
     telemetry(
-        upper_sensor::Imu1AccelLowRange,
-        upper_sensor::Imu1AccelFullRange,
-        upper_sensor::Imu1Gyro,
-        upper_sensor::Imu1Temp,
-        upper_sensor::Imu2AccelLowRange,
-        upper_sensor::Imu2AccelFullRange,
-        upper_sensor::Imu2Gyro,
-        upper_sensor::Imu2Temp
+        imu1::AccelLowRange,
+        imu1::AccelFullRange,
+        imu1::Gyro,
+        imu1::Temp,
+        imu2::AccelLowRange,
+        imu2::AccelFullRange,
+        imu2::Gyro,
+        imu2::Temp
     )
 );

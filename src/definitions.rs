@@ -62,29 +62,33 @@ pub mod telemetry {
 
     #[tmm(id = 300)]
     mod upper_sensor {
-        #[tmv(crate::types::Vec3I16)]
-        struct Imu1AccelLowRange;
+        mod imu1 {
+            #[tmv(crate::types::Vec3I16)]
+            struct AccelLowRange;
+            
+            #[tmv(crate::types::Vec3I16)]
+            struct AccelFullRange;
+
+            #[tmv(crate::types::Vec3I16)]
+            struct Gyro;
+
+            #[tmv(i16)]
+            struct Temp;
+        }
         
-        #[tmv(crate::types::Vec3I16)]
-        struct Imu1AccelFullRange;
+        mod imu2 {
+            #[tmv(crate::types::Vec3I16)]
+            struct AccelLowRange;
+            
+            #[tmv(crate::types::Vec3I16)]
+            struct AccelFullRange;
 
-        #[tmv(crate::types::Vec3I16)]
-        struct Imu1Gyro;
+            #[tmv(crate::types::Vec3I16)]
+            struct Gyro;
 
-        #[tmv(i16)]
-        struct Imu1Temp;
-        
-        #[tmv(crate::types::Vec3I16)]
-        struct Imu2AccelLowRange;
-        
-        #[tmv(crate::types::Vec3I16)]
-        struct Imu2AccelFullRange;
-
-        #[tmv(crate::types::Vec3I16)]
-        struct Imu2Gyro;
-
-        #[tmv(i16)]
-        struct Imu2Temp;
+            #[tmv(i16)]
+            struct Temp;
+        }
     }
 }
 
