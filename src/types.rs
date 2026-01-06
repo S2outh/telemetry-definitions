@@ -1,27 +1,41 @@
 use tmtc_system::*;
 
-// this is temporary
-#[derive(TMValue, Default)]
-pub struct Telecommand {
-    subsys_id: u8,
-    cmd_id: u8,
-    payload: u64
+// # Telecommands
+#[derive(TMValue)]
+pub enum Telecommand {
+    RocketLST(LSTCommand),
+    EPS(EPSCommand),
 }
-//enum Telecommand {
-//    RocketLST(LSTCommand),
-//    EPS(EPSCommand),
-//}
-//
-//enum LSTCommand {
-//    Reboot,
-//}
-//
-//enum EPSCommand {
-//    SetSource(FlipFlopState, Option<u8>),
-//    EnableSink(Sink, Option<u8>),
-//    DisableSink(Sink, Option<u8>),
-//}
 
+#[derive(TMValue)]
+pub enum LSTCommand {
+    Reboot,
+}
+
+#[derive(TMValue)]
+pub enum EPSCommand {
+    SetSource(FlipFlopState, Option::<u8>),
+    EnableSink(Sink, Option::<u8>),
+    DisableSink(Sink, Option::<u8>),
+}
+
+#[derive(TMValue, Clone, Copy)]
+pub enum FlipFlopState {
+    On,
+    Bat1,
+    Bat2,
+    AuxPwr,
+}
+
+#[derive(TMValue, Clone, Copy)]
+pub enum Sink {
+    RocketLST,
+    SensorUpper,
+    GPS,
+    RocketHD,
+}
+
+// # Vector types
 #[derive(TMValue, Default, Copy, Clone)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, Debug))]
 pub struct Vec3I16 {
