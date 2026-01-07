@@ -89,6 +89,14 @@ pub mod telemetry {
             #[tmv(i16)]
             struct Temp;
         }
+        
+        mod baro {
+            #[tmv(i16)]
+            struct Pressure;
+
+            #[tmv(i16)]
+            struct Temp;
+        }
     }
 }
 

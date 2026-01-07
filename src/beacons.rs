@@ -43,6 +43,8 @@ beacon!(HighRateTelemetry,
         imu2::AccelLowRange,
         imu2::AccelFullRange,
         imu2::Gyro,
-        imu2::Temp
+        imu2::Temp,
+        baro::Pressure,
+        baro::Temp
     )
 );
