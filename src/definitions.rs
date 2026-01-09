@@ -97,6 +97,9 @@ pub mod telemetry {
             #[tmv(i16)]
             struct Temp;
         }
+
+        #[tmv(i16)]
+        struct InternalTemperature;
     }
 }
 

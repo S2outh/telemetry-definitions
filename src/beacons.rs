@@ -45,6 +45,8 @@ beacon!(HighRateTelemetry,
         imu2::Gyro,
         imu2::Temp,
         baro::Pressure,
-        baro::Temp
+        baro::Temp,
+        InternalTemperature // putting this here is nonsensical and pending a better beacon
+                            // sorting system
     )
 );
